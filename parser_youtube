@@ -11,6 +11,7 @@ urls = [
 
 video_url = []
 
+
 def new():
     driver = webdriver.Chrome(options=chromeoption)
     for url in urls:
@@ -22,13 +23,12 @@ def new():
 
         j = 0  # urls
         for title in titles:
-            if  'shorts' not in video_urls[j].get('href'):
+            if 'shorts' not in video_urls[j].get('href'):
                 title = title.text
                 url_video = 'https://www.youtube.com' + video_urls[j].get('href')
                 itog = (title + ' ' + url_video)
-                video_url.append (itog)
+                video_url.append(itog)
 
             j += 1
 
     return video_url
-
