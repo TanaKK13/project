@@ -1,5 +1,9 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
+from selenium.webdriver.chrome.options import Options
+
+chromeoption = Options()
+chromeoption.add_argument('--headless')
 
 urls = [
     'https://www.youtube.com/channel/UCPA4lU-VlLO4-hU38JgItQw/videos'
@@ -8,7 +12,7 @@ urls = [
 video_url = []
 
 def new():
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chromeoption)
     for url in urls:
         driver.get('{}//videos?view=0&sort=dd&flow=grid'.format(url))
         content = driver.page_source.encode('utf-8').strip()
@@ -28,6 +32,3 @@ def new():
 
     return video_url
 
-video_list = new()
-for i in video_list:
-    print (i)
