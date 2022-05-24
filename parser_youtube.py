@@ -21,7 +21,7 @@ def new():
         titles = soup.findAll('a', id='video-title')
         video_urls = soup.findAll('a', id='video-title')
 
-        j = 0  # urls
+        j = 0
         for title in titles:
             if 'shorts' not in video_urls[j].get('href'):
                 title = title.text
