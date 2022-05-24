@@ -156,7 +156,7 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, text,
                          reply_markup=menu_video)
     elif call.data == 'key_osnova':
-        menu_osnova = types.InlineKeyboardMarkup(row_width=2)
+        menu_osnova = types.InlineKeyboardMarkup(row_width=1)
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='key_course')
         item_site = types.InlineKeyboardButton(text='Сайт со всеми курсами✨',
                                                url='https://webium.ru/')
@@ -172,7 +172,7 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, text_2,
                          reply_markup=menu_osnova)
     elif call.data == 'key_fresh':
-        menu_fresh = types.InlineKeyboardMarkup(row_width=2)
+        menu_fresh = types.InlineKeyboardMarkup(row_width=1)
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='key_course')
         item_site = types.InlineKeyboardButton(text='Сайт со всеми курсами✨',
                                                url='https://webium.ru/')
@@ -188,7 +188,7 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, text_2,
                          reply_markup=menu_fresh)
     elif call.data == 'key_extra':
-        menu_extra = types.InlineKeyboardMarkup(row_width=2)
+        menu_extra = types.InlineKeyboardMarkup(row_width=1)
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='key_course')
         item_site = types.InlineKeyboardButton(text='Сайт со всеми курсами✨',
                                                url='https://webium.ru/')
@@ -204,7 +204,7 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, text_2,
                          reply_markup=menu_extra)
     elif call.data == 'key_refresh':
-        menu_refresh = types.InlineKeyboardMarkup(row_width=2)
+        menu_refresh = types.InlineKeyboardMarkup(row_width=1)
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='key_course')
         item_site = types.InlineKeyboardButton(text='Сайт со всеми курсами✨',
                                                url='https://webium.ru/')
@@ -220,7 +220,7 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, text_2,
                          reply_markup=menu_refresh)
     elif call.data == 'key_spec':
-        menu_spec = types.InlineKeyboardMarkup(row_width=2)
+        menu_spec = types.InlineKeyboardMarkup(row_width=1)
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='key_course')
         item_site = types.InlineKeyboardButton(text='Сайт со всеми курсами✨',
                                                url='https://webium.ru/')
