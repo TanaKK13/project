@@ -96,8 +96,8 @@ def callback_inline(call):
         bot.send_photo(call.message.chat.id, photo_menu)
         bot.send_message(call.message.chat.id, 'Куда хочешь пойти дальше? 🤔', reply_markup=mainmenu)
     elif call.data == 'key_teacher':
-        menu_teacher = types.InlineKeyboardMarkup(row_width=2)
-        item_video_aj = types.InlineKeyboardButton(text='Видео про Эйджея',
+        menu_teacher = types.InlineKeyboardMarkup(row_width=1)
+        item_video_aj = types.InlineKeyboardButton(text='Видео про Эйджея 😻',
                                                    url='https://www.youtube.com/watch?v=cxjDxx2Mks4&t=8s',
                                                    callback_data='key_video_aj')
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='mainmenu')
@@ -124,14 +124,24 @@ def callback_inline(call):
                          reply_markup=menu_course)
     elif call.data == 'key_meme':
         menu_meme = types.InlineKeyboardMarkup(row_width=2)
-        item_meme = types.InlineKeyboardButton(text='Начать смотреть мемы', callback_data='key_meme')
+        item_meme = types.InlineKeyboardButton(text='Начать смотреть мемы', callback_data='key_mem')
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='mainmenu')
         menu_meme.add(item_meme, back)
         photo = Path('telegram_bot', 'images', 'meme.jpg')
         meme = open(photo, 'rb')
         bot.send_photo(call.message.chat.id, meme)
         bot.send_message(call.message.chat.id,
-                         'Устал от подготовки? Понимаю, я вот устаю от бесконечных отзывов от учеников, их очень много и нужно их всех обработать, кстати можешь познакомиться с ними здесь(*тут будет ссылка*), я вот отдыхаю, когда смотрю мемы, давай покажу и тебе парочку!',
+                         'Устал от подготовки? Понимаю, я вот устаю от бесконечных отзывов от учеников, их очень много и нужно их всех обработать. Я вот отдыхаю, когда смотрю мемы, давай покажу и тебе парочку!',
+                         reply_markup=menu_meme)
+    elif call.data == 'key_mem':
+        menu_meme = types.InlineKeyboardMarkup(row_width=2)
+        back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='mainmenu')
+        menu_meme.add(back)
+        photo = Path('telegram_bot', 'images', 'soon.jpg')
+        meme = open(photo, 'rb')
+        bot.send_photo(call.message.chat.id, meme)
+        bot.send_message(call.message.chat.id,
+                         'Пока тут ничего нет',
                          reply_markup=menu_meme)
     elif call.data == 'key_test':
         menu_test = types.InlineKeyboardMarkup(row_width=2)
@@ -155,6 +165,16 @@ def callback_inline(call):
         bot.send_photo(call.message.chat.id, video_web)
         bot.send_message(call.message.chat.id, text,
                          reply_markup=menu_video)
+    elif call.data == 'item_test':
+        menu_meme = types.InlineKeyboardMarkup(row_width=2)
+        back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='mainmenu')
+        menu_meme.add(back)
+        photo = Path('telegram_bot', 'images', 'soon.jpg')
+        meme = open(photo, 'rb')
+        bot.send_photo(call.message.chat.id, meme)
+        bot.send_message(call.message.chat.id,
+                         'Пока тут ничего нет',
+                         reply_markup=menu_meme)
     elif call.data == 'key_osnova':
         menu_osnova = types.InlineKeyboardMarkup(row_width=1)
         back = types.InlineKeyboardButton(text='Назад ⬅️', callback_data='key_course')
